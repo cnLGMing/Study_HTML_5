@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖动效果2</title>
+</head>
+<body>
+
+<img id="drag1" src="http://www.w3school.com.cn/i/eg_dragdrop_w3school.gif" draggable="true"
+     ondragstart="drag(event)">
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+</body>
+
+<style type="text/css">
+    #drag1 {
+        float: inherit;
+    }
+
+    #div1, #div2 {
+        float: inherit;
+        width: 198px;
+        height: 66px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+    }
+</style>
+
+<script type="text/javascript">
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) { // 拖
+        ev.dataTransfer.setData("Text", ev.target.id); // 设置数据类型，设置可拖动元素的id
+    }
+
+    function drop(ev) { // 放
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("Text"); // 获取被拖动的数据的元素id，这里获取到的即为：drag1
+        ev.target.appendChild(document.getElementById(data));// 把被拖元素追加到放置元素（目标元素）中
+    }
+
+</script>
+
+</html>
+
+<!--
+http://www.w3school.com.cn/html5/html_5_draganddrop.asp
+-->

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 画线</title>
+</head>
+<body>
+<canvas id="canvas_line" width="1080" height="1920" style="border: 1px solid #c3c3c3;"></canvas>
+</body>
+
+<script type="text/javascript">
+    var canvasLine = document.getElementById("canvas_line");
+    var context = canvasLine.getContext("2d");
+    context.moveTo(10, 10);
+    context.lineTo(150, 500);
+    context.lineTo(10, 500);
+    context.stroke();
+</script>
+</html>
+
+<!--
+http://www.w3school.com.cn/html5/html_5_canvas.asp
+-->

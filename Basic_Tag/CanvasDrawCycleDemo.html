@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 画圆</title>
+</head>
+<body>
+<canvas id="canvas_cycle" width="500" height="250" style="border: solid #c3c3c3;"></canvas>
+</body>
+
+<script type="text/javascript">
+    var cycle = document.getElementById("canvas_cycle");
+    var context = cycle.getContext("2d");
+    context.fillStyle = "#0000ff"
+    context.beginPath();
+    context.arc(70, 18, 15, 0, Math.PI * 2, true);//圆心位置,半径,开始角,结束角,逆时针
+    context.closePath();
+    context.fill();
+</script>
+</html>
+
+<!--
+http://www.w3school.com.cn/html5/html_5_canvas.asp
+-->

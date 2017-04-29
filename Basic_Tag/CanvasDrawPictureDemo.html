@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 画图片</title>
+</head>
+<body>
+<canvas id="canvas_atom" width="1080" height="1080" style="border: 1px solid #c3c3c3;"></canvas>
+</body>
+
+
+<script type="text/javascript">
+    var atom = document.getElementById("canvas_atom");
+    var context = atom.getContext("2d");
+    var image = new Image();
+    image.src = "http://pic.875.cn/upload/2013-12-20/1759091098.jpg";
+    context.drawImage(image, 0, 0);
+</script>
+
+</html>
+
+<!--
+http://www.w3school.com.cn/html5/html_5_canvas.asp
+-->

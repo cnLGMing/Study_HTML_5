@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取鼠标的坐标</title>
+</head>
+
+<body style="margin: 0px">
+
+<p>将鼠标移动至矩形区内，可获得鼠标的具体坐标</p>
+
+<div id="rectSpace" onmousemove="getCoordinate(event)" onmouseout="clearCoordinate(event)"></div>
+
+<br/>
+<br/>
+<br/>
+<div id="showXYCoordinate"></div>
+
+</body>
+
+<style type="text/css">
+    #rectSpace {
+        float: left;
+        width: 199px;
+        height: 99px;
+        border: solid #c3c3c3;
+    }
+
+    body {
+        font-size: 70%;
+        font-family: Verdana, helvetica, arial, sans-serif;
+    }
+</style>
+
+<script type="text/javascript">
+    function getCoordinate(ev) {
+        x = ev.clientX; // 获取 X 轴
+        y = ev.clientY; // 获取 Y 轴
+        document.getElementById("showXYCoordinate").innerHTML = "鼠标的具体坐标为--> X：" + x + "，Y：" + y;
+    }
+
+    function clearCoordinate(ev) {
+        document.getElementById("showXYCoordinate").innerHTML = "";
+    }
+
+</script>
+
+</html>
+
+
+<!--
+http://www.w3school.com.cn/html5/html_5_canvas.asp
+-->
